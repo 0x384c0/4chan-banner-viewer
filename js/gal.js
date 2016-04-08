@@ -32,7 +32,6 @@ function Create() {
 
 function REdraw() {
     var to = document.getElementById("imageID").value;//получить ID картинки
-    setCookie(self.imageID, to, "Mon, 01-Jan-3000 00:00:00 GMT", "/");
     to = parseInt(to);//преобразовать в int
 
     var i = 1;
@@ -50,6 +49,7 @@ function REdraw() {
         i++;
     }
     reset_prbar();
+    saveStateToCookies();
 }
 
 function click_on_img(i)//нажатие левой кнопки - во весь экран
@@ -120,17 +120,29 @@ function GalleryDefaultState() {
     this.URLaddress = "http://d2.files.namba.kg/files/";
 
     var imageid = getCookie(self.imageID);
+    var step = getCookie(self.Step);
 
     if (imageid != undefined)
         this.imageID = imageid;
     else
         this.imageID = 321;
 
-    this.Step = 1;
+    if (step != undefined)
+        this.Step = step;
+    else
+        this.Step = 1;
+
     this.PicOnPage = 60;
     this.user = "http://namba.kg/#!/photo/";
 
 
+}
+
+function saveStateToCookies(){
+    var to = document.getElementById("imageID").value;//получить ID картинки
+    setCookie(self.imageID, to, "Mon, 01-Jan-3000 00:00:00 GMT", "/");
+    var step = document.getElementById("Step").value;//получить шаг
+    setCookie(self.Step, step, "Mon, 01-Jan-3000 00:00:00 GMT", "/");
 }
 
 //alert('message');
