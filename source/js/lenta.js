@@ -1,8 +1,8 @@
-var chin = [];
-var chinTarget = [111, 11];
-var q;
-var intervalID;
-var anim = 0;
+var chin = [],
+    chinTarget = [111, 11],
+    q,
+    intervalID,
+    anim = 0;
 //создание DIV
 for (q = 0; q < 30; q++) {
     var d = document.createElement("DIV");

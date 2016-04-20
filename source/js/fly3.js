@@ -1,5 +1,6 @@
-var path = "img/flies.png";
-var animfly3 = 0;
+var path = "img/flies.png",
+    animfly3 = false,
+    flyIntervalId;
 
 /* obtengo el tamaño de la ventana */
 if (typeof( window.innerWidth ) == 'number') {
@@ -12,7 +13,7 @@ if (typeof( window.innerWidth ) == 'number') {
     var sw = document.body.clientWidth;
     var sh = document.body.clientHeight;
 }
-;
+
 
 /* posicion y velocidad inicial */
 var x = 100;
@@ -79,13 +80,13 @@ function move() {
         }
     }
 
-};
+}
 function p() {
     if (Math.random() < 0.075) {
         clearInterval(id);
         id = setInterval('move()', 30);
     }
-};
+}
 function c() {
     if (yy < 0) {
         if (xx < 0) {
@@ -102,7 +103,7 @@ function c() {
         offset = 200;
         offsetb = 250;
     }
-};
+}
 
 function showOffset(o) {
     f.style.backgroundPosition = "0px -" + o + "px";
@@ -113,15 +114,13 @@ function showOffset(o) {
 function onoffanimFly3() {
 
     document.getElementsByClassName("fly3")[0].style.visibility = "visible";
-    if (animfly3 == 0) {
-        var id = setInterval('move()', 30);
+    if (!animfly3) {
+        flyIntervalId = setInterval('move()', 30);
         void(0);
-//document.getElementsByClassName("fly3")[0].style.visibility = "visible" ;
-        animfly3 = 1;
-    }
-    else {/*
-     //clearInterval(id);
-     document.getElementsByClassName("fly3")[0].style.visibility = "hidden" ;
-     animfly3=0;*/
+        animfly3 = true;
+    } else {
+        clearInterval(flyIntervalId);
+        document.getElementsByClassName("fly3")[0].style.visibility = "hidden";
+        animfly3 = false;
     }
 }
