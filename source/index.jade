@@ -1,0 +1,57 @@
+doctype html
+html
+    head
+        title  Gallery
+        meta(charset='UTF-8')
+        script(src='js/gal.js')
+        script(src='js/exp_image_2ch/jquery_002.js')
+        script(src='js/exp_image_2ch/newwakaba.js')
+        script(src='js/exp_image_2ch/swag.js')
+        link(rel='stylesheet', type='text/css', href='css/style.css')
+    body
+        #button
+            span(style='padding-left:5px;') »
+            #s_panel(style='background: rgba(255, 180, 0, 0.85);')
+                .octobird-block(style='padding-left:9px;', data-nb='1')
+                    input#URLaddress(type='text', name='q', value='http://d2.files.namba.kg/files/', title='', onchange='REdraw()', onkeypress='REdraw()', oninput='REdraw()')
+                    span(style='color:green;') URL
+                    br
+                    input#imageID(type='text', name='q', value='321', title='', onchange='REdraw()', onkeypress='REdraw()', oninput='REdraw()')
+                    span(style='color:green;') ID картинки
+                    br
+                    input#Step(type='text', name='q', value='1', title='', onchange='REdraw()', onkeypress='REdraw()', oninput='REdraw()')
+                    span(style='color:green;') Step
+                    br
+                    input#PicOnPage(type='text', name='q', value='60', title='', onchange='Create()', onkeypress='Create()', oninput='Create()')
+                    span(style='color:green;') Картинок на странице
+                    br
+                    input#user(type='text', title='', name='q', value='http://namba.kg/#!/photo/')
+                    span(style='color:green;') Фото в мире
+                    br
+                    span(style='color:green;') http://mir.namba.kg/personal.php?user=
+        center
+            #ImageList(style='line-height:0; /*убрать вертикальный отступы*/')
+                // Поле для картинок
+            br
+            img(src='img/left_arrow.jpg', onclick='left_arrow()')
+            img(src='img/right_arrow.jpg', onclick='right_arrow()')
+        progress#progress_bar(value='0', max='100', style='width:100%;')
+        // <input type="text" value="move" id = "move" style="margin: 5px;" readonly/>
+        script.
+            document.onkeyup = key_detect;//Вкл нажатия клавиш
+        style.
+            .yise {
+                width: 20px;
+                height: 20px;
+                background: #fdaaab;
+                border-radius: 8px;
+                border: 0px solid black;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background: url('img/lenta-pattern.png');
+            }
+        script(src='js/lenta.js')
+        script(src='js/fly3.js')
+        input#w8-grey1.w8-button.grey(type='button', value='Ленточка', onclick='onoffanim()', name='w8-grey', style='margin: 5px;')
+        input#w8-grey2.w8-button.grey(type='button', value='Fly', onclick='onoffanimFly3()', name='w8-grey', style='margin: 5px;')

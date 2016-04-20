@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3536b46e-8419-40f6-ac6f-62e1ea539c54" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gallery.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/flies.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/left_arrow.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/lenta-pattern.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/right_arrow.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/exp_image_2ch/jquery_002.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/exp_image_2ch/newwakaba.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/exp_image_2ch/swag.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/fly3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/gal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/lenta.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/style/style.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/index.jade" afterPath="$PROJECT_DIR$/source/index.jade" />
     </list>
     <ignored path="ImageGrabberGallery.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,35 +23,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-118">
-              <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+            <state relative-caret-position="840">
+              <caret line="137" column="60" selection-start-line="137" selection-start-column="60" selection-end-line="137" selection-end-column="60" />
               <folding>
-                <element signature="e#2718#3360#0" expanded="false" />
-                <element signature="e#3416#3836#0" expanded="false" />
-                <element signature="e#3480#3530#0" expanded="false" />
-                <element signature="e#3679#3748#0" expanded="false" />
-                <element signature="e#3910#4152#0" expanded="false" />
-                <element signature="e#3971#4021#0" expanded="false" />
-                <element signature="e#4203#4514#0" expanded="false" />
-                <element signature="e#4263#4313#0" expanded="false" />
-                <element signature="e#4565#4919#0" expanded="false" />
-                <element signature="e#4627#4677#0" expanded="false" />
-                <marker date="1461055052000" expanded="false" signature="2833:2883" placeholder="{...}" />
-                <marker date="1461055052000" expanded="false" signature="2988:3091" placeholder="{...}" />
-                <marker date="1461055052000" expanded="false" signature="3007:3081" placeholder="[...]" />
+                <element signature="e#1170#1343#0" expanded="false" />
+                <element signature="e#1289#1318#0" expanded="false" />
+                <element signature="e#1599#2803#0" expanded="false" />
+                <element signature="e#1618#1726#0" expanded="false" />
+                <element signature="e#1637#1720#0" expanded="false" />
+                <element signature="e#1659#1710#0" expanded="false" />
+                <element signature="e#1752#2138#0" expanded="false" />
+                <element signature="e#1771#2132#0" expanded="false" />
+                <element signature="e#1795#2094#0" expanded="false" />
+                <element signature="e#2153#2180#0" expanded="false" />
+                <element signature="e#2200#2293#0" expanded="false" />
+                <element signature="e#2219#2287#0" expanded="false" />
+                <element signature="e#2306#2408#0" expanded="false" />
+                <element signature="e#2325#2402#0" expanded="false" />
+                <element signature="e#2432#2486#0" expanded="false" />
+                <element signature="e#2503#2723#0" expanded="false" />
+                <element signature="e#2522#2717#0" expanded="false" />
+                <element signature="e#2738#2801#0" expanded="false" />
+                <element signature="e#2757#2795#0" expanded="false" />
+                <element signature="e#2864#3003#0" expanded="false" />
+                <element signature="e#3018#3210#0" expanded="false" />
+                <element signature="e#3660#3945#0" expanded="false" />
+                <element signature="e#4008#4069#0" expanded="false" />
+                <element signature="e#4107#4279#0" expanded="false" />
+                <element signature="e#4141#4258#0" expanded="false" />
+                <element signature="e#4336#4778#0" expanded="false" />
+                <element signature="e#4387#4419#0" expanded="false" />
+                <element signature="e#4503#4562#0" expanded="false" />
+                <element signature="e#4511#4559#0" expanded="false" />
+                <element signature="e#4837#5257#0" expanded="false" />
+                <element signature="e#4901#4951#0" expanded="false" />
+                <element signature="e#5100#5169#0" expanded="false" />
+                <element signature="e#5332#5574#0" expanded="false" />
+                <element signature="e#5393#5443#0" expanded="false" />
+                <element signature="e#5686#5736#0" expanded="false" />
+                <element signature="e#6051#6101#0" expanded="false" />
+                <element signature="e#6408#6456#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -79,6 +78,9 @@
       <list>
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Jade File" />
+        <option value="CSS File" />
+        <option value="Stylus File" />
       </list>
     </option>
   </component>
@@ -100,8 +102,13 @@
         <option value="$PROJECT_DIR$/gallery.html" />
         <option value="$PROJECT_DIR$/js/gal.js" />
         <option value="$PROJECT_DIR$/public/gallery.html" />
+        <option value="$PROJECT_DIR$/source/js/exp_image_2ch/swag.js" />
+        <option value="$PROJECT_DIR$/source/js/exp_image_2ch/newwakaba.js" />
+        <option value="$PROJECT_DIR$/source/js/exp_image_2ch/jquery_002.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/source/css/style.styl" />
         <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/source/index.jade" />
       </list>
     </option>
   </component>
@@ -115,6 +122,27 @@
         <tasks>
           <GulpTaskState>
             <task-name>browser-sync</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>build</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>cleanup</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>copy</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>images</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>jade</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>plugins</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>stylus</task-name>
           </GulpTaskState>
         </tasks>
       </GulpfileState>
@@ -178,12 +206,81 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html_css_javascript_image_grabber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html_css_javascript_image_grabber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html_css_javascript_image_grabber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html_css_javascript_image_grabber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html_css_javascript_image_grabber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html_css_javascript_image_grabber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html_css_javascript_image_grabber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html_css_javascript_image_grabber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -240,7 +337,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -254,8 +350,13 @@
     <property name="editorconfig.notification" value="all" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
+    <property name="list.type.of.created.stylesheet" value="Stylus" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/js" />
+      <recent name="$PROJECT_DIR$/source" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/../ImageGrabberGallery/img" />
@@ -348,7 +449,8 @@
       <workItem from="1459405125039" duration="4523000" />
       <workItem from="1460089969009" duration="1236000" />
       <workItem from="1460099220181" duration="17000" />
-      <workItem from="1461045345049" duration="2991000" />
+      <workItem from="1461045345049" duration="3114000" />
+      <workItem from="1461132413206" duration="3418000" />
     </task>
     <task id="LOCAL-00001" summary="saving imageID in cookies">
       <created>1459409979316</created>
@@ -368,19 +470,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11580000" />
+    <option name="totallyTimeSpent" value="15121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="981" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18220116" sideWeight="0.5060449" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18220116" sideWeight="0.4939551" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18220116" sideWeight="0.5180723" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18220116" sideWeight="0.48192772" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32908458" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3283237" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -391,8 +492,29 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18220116" sideWeight="0.51098263" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18220116" sideWeight="0.48901734" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -417,32 +539,54 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="73" column="79" selection-start-line="73" selection-start-column="79" selection-end-line="73" selection-end-column="79" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/gal.js">
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="2055">
+          <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#inc_prbar#0" expanded="false" />
-            <element signature="n#!!block;n#reset_prbar#0" expanded="false" />
-            <element signature="n#!!block;n#Create#0" expanded="false" />
-            <element signature="e#646#1198#0" expanded="false" />
-            <element signature="e#1513#2157#0" expanded="false" />
-            <element signature="e#2017#2137#0" expanded="false" />
-            <element signature="n#!!block;n#click_on_img#0" expanded="false" />
-            <element signature="n#!!block;n#rclick_on_img#0" expanded="false" />
-            <element signature="n#!!block;n#right_arrow#0" expanded="false" />
-            <element signature="n#!!block;n#left_arrow#0" expanded="false" />
-            <element signature="n#!!block;n#key_detect#0" expanded="false" />
-            <element signature="e#3430#4038#0" expanded="false" />
-            <element signature="n#!!block;n#loadStateToWindow#0" expanded="false" />
-            <element signature="n#!!block;n#getCookie#0" expanded="false" />
-            <element signature="n#!!block;n#setCookie#0" expanded="false" />
+            <element signature="e#1170#1343#0" expanded="false" />
+            <element signature="e#1289#1318#0" expanded="false" />
+            <element signature="e#1599#2803#0" expanded="false" />
+            <element signature="e#1618#1726#0" expanded="false" />
+            <element signature="e#1637#1720#0" expanded="false" />
+            <element signature="e#1659#1710#0" expanded="false" />
+            <element signature="e#1752#2138#0" expanded="false" />
+            <element signature="e#1771#2132#0" expanded="false" />
+            <element signature="e#1795#2094#0" expanded="false" />
+            <element signature="e#2153#2180#0" expanded="false" />
+            <element signature="e#2200#2293#0" expanded="false" />
+            <element signature="e#2219#2287#0" expanded="false" />
+            <element signature="e#2306#2408#0" expanded="false" />
+            <element signature="e#2325#2402#0" expanded="false" />
+            <element signature="e#2432#2486#0" expanded="false" />
+            <element signature="e#2503#2723#0" expanded="false" />
+            <element signature="e#2522#2717#0" expanded="false" />
+            <element signature="e#2738#2801#0" expanded="false" />
+            <element signature="e#2757#2795#0" expanded="false" />
+            <element signature="e#2864#3003#0" expanded="false" />
+            <element signature="e#3018#3210#0" expanded="false" />
+            <element signature="e#3660#3945#0" expanded="false" />
+            <element signature="e#4008#4069#0" expanded="false" />
+            <element signature="e#4107#4279#0" expanded="false" />
+            <element signature="e#4141#4258#0" expanded="false" />
+            <element signature="e#4336#4778#0" expanded="false" />
+            <element signature="e#4387#4419#0" expanded="false" />
+            <element signature="e#4503#4562#0" expanded="false" />
+            <element signature="e#4511#4559#0" expanded="false" />
+            <element signature="e#4837#5257#0" expanded="false" />
+            <element signature="e#4901#4951#0" expanded="false" />
+            <element signature="e#5100#5169#0" expanded="false" />
+            <element signature="e#5332#5574#0" expanded="false" />
+            <element signature="e#5393#5443#0" expanded="false" />
+            <element signature="e#5686#5736#0" expanded="false" />
+            <element signature="e#6051#6101#0" expanded="false" />
+            <element signature="e#6408#6456#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -459,23 +603,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#inc_prbar#0" expanded="false" />
-            <element signature="n#!!block;n#reset_prbar#0" expanded="false" />
-            <element signature="n#!!block;n#Create#0" expanded="false" />
-            <element signature="e#646#1198#0" expanded="false" />
-            <element signature="e#1513#2157#0" expanded="false" />
-            <element signature="e#2017#2137#0" expanded="false" />
-            <element signature="n#!!block;n#click_on_img#0" expanded="false" />
-            <element signature="n#!!block;n#rclick_on_img#0" expanded="false" />
-            <element signature="n#!!block;n#right_arrow#0" expanded="false" />
-            <element signature="n#!!block;n#left_arrow#0" expanded="false" />
-            <element signature="n#!!block;n#key_detect#0" expanded="false" />
-            <element signature="e#3430#4038#0" expanded="false" />
-            <element signature="n#!!block;n#loadStateToWindow#0" expanded="false" />
-            <element signature="n#!!block;n#getCookie#0" expanded="false" />
-            <element signature="n#!!block;n#setCookie#0" expanded="false" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="73" column="79" selection-start-line="73" selection-start-column="79" selection-end-line="73" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/gal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -563,13 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="193" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../ImageGrabberGallery/tmp.html" />
     <entry file="file://$PROJECT_DIR$/public/js/fly3.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -589,7 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -597,53 +733,161 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1125">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/lenta.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/fly3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/js/exp_image_2ch/swag.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="799" column="20" selection-start-line="799" selection-start-column="20" selection-end-line="799" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/js/exp_image_2ch/jquery_002.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="1" column="9117" selection-start-line="1" selection-start-column="9117" selection-end-line="1" selection-end-column="9117" />
           <folding>
-            <element signature="n#!!block;n#inc_prbar#0" expanded="false" />
-            <element signature="n#!!block;n#reset_prbar#0" expanded="false" />
-            <element signature="n#!!block;n#Create#0" expanded="false" />
-            <element signature="e#646#1198#0" expanded="false" />
-            <element signature="e#1513#2157#0" expanded="false" />
-            <element signature="e#2017#2137#0" expanded="false" />
-            <element signature="n#!!block;n#click_on_img#0" expanded="false" />
-            <element signature="n#!!block;n#rclick_on_img#0" expanded="false" />
-            <element signature="n#!!block;n#right_arrow#0" expanded="false" />
-            <element signature="n#!!block;n#left_arrow#0" expanded="false" />
-            <element signature="n#!!block;n#key_detect#0" expanded="false" />
-            <element signature="e#3430#4038#0" expanded="false" />
-            <element signature="n#!!block;n#loadStateToWindow#0" expanded="false" />
-            <element signature="n#!!block;n#getCookie#0" expanded="false" />
-            <element signature="n#!!block;n#setCookie#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+    <entry file="file://$PROJECT_DIR$/source/js/exp_image_2ch/newwakaba.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+        <state relative-caret-position="4184">
+          <caret line="1107" column="5" selection-start-line="1107" selection-start-column="5" selection-end-line="1107" selection-end-column="5" />
           <folding>
-            <element signature="e#2718#3360#0" expanded="false" />
-            <element signature="e#3416#3836#0" expanded="false" />
-            <element signature="e#3480#3530#0" expanded="false" />
-            <element signature="e#3679#3748#0" expanded="false" />
-            <element signature="e#3910#4152#0" expanded="false" />
-            <element signature="e#3971#4021#0" expanded="false" />
-            <element signature="e#4203#4514#0" expanded="false" />
-            <element signature="e#4263#4313#0" expanded="false" />
-            <element signature="e#4565#4919#0" expanded="false" />
-            <element signature="e#4627#4677#0" expanded="false" />
-            <marker date="1461055052000" expanded="false" signature="2833:2883" placeholder="{...}" />
-            <marker date="1461055052000" expanded="false" signature="2988:3091" placeholder="{...}" />
-            <marker date="1461055052000" expanded="false" signature="3007:3081" placeholder="[...]" />
+            <marker date="1461134154000" expanded="true" signature="8444:8458" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/plugins.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1125">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/js/plugins.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/css/style.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="110" column="22" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2411">
+          <caret line="25" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="193" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-118">
-          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+        <state relative-caret-position="373">
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="137" column="60" selection-start-line="137" selection-start-column="60" selection-end-line="137" selection-end-column="60" />
+          <folding>
+            <element signature="e#1170#1343#0" expanded="false" />
+            <element signature="e#1289#1318#0" expanded="false" />
+            <element signature="e#1599#2803#0" expanded="false" />
+            <element signature="e#1618#1726#0" expanded="false" />
+            <element signature="e#1637#1720#0" expanded="false" />
+            <element signature="e#1659#1710#0" expanded="false" />
+            <element signature="e#1752#2138#0" expanded="false" />
+            <element signature="e#1771#2132#0" expanded="false" />
+            <element signature="e#1795#2094#0" expanded="false" />
+            <element signature="e#2153#2180#0" expanded="false" />
+            <element signature="e#2200#2293#0" expanded="false" />
+            <element signature="e#2219#2287#0" expanded="false" />
+            <element signature="e#2306#2408#0" expanded="false" />
+            <element signature="e#2325#2402#0" expanded="false" />
+            <element signature="e#2432#2486#0" expanded="false" />
+            <element signature="e#2503#2723#0" expanded="false" />
+            <element signature="e#2522#2717#0" expanded="false" />
+            <element signature="e#2738#2801#0" expanded="false" />
+            <element signature="e#2757#2795#0" expanded="false" />
+            <element signature="e#2864#3003#0" expanded="false" />
+            <element signature="e#3018#3210#0" expanded="false" />
+            <element signature="e#3660#3945#0" expanded="false" />
+            <element signature="e#4008#4069#0" expanded="false" />
+            <element signature="e#4107#4279#0" expanded="false" />
+            <element signature="e#4141#4258#0" expanded="false" />
+            <element signature="e#4336#4778#0" expanded="false" />
+            <element signature="e#4387#4419#0" expanded="false" />
+            <element signature="e#4503#4562#0" expanded="false" />
+            <element signature="e#4511#4559#0" expanded="false" />
+            <element signature="e#4837#5257#0" expanded="false" />
+            <element signature="e#4901#4951#0" expanded="false" />
+            <element signature="e#5100#5169#0" expanded="false" />
+            <element signature="e#5332#5574#0" expanded="false" />
+            <element signature="e#5393#5443#0" expanded="false" />
+            <element signature="e#5686#5736#0" expanded="false" />
+            <element signature="e#6051#6101#0" expanded="false" />
+            <element signature="e#6408#6456#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

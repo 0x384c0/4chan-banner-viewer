@@ -21,8 +21,8 @@ var gulp = require('gulp'),
     del = require('del'),
     runSequence = require('run-sequence'),
     watch = require('gulp-watch'),
-    gulpZip = require('gulp-zip'),
-    nodePath = require('path'),
+    // gulpZip = require('gulp-zip'),
+    // nodePath = require('path'),
     jadeInheritance = require('gulp-jade-inheritance'),
     gulpif = require('gulp-if'),
     cached = require('gulp-cached'),
@@ -30,6 +30,16 @@ var gulp = require('gulp'),
     filter = require('gulp-filter'),
     stylint = require('gulp-stylint');
 
+
+var errorHandler = function(err) {
+    gutil.log([(err.name + ' in ' + err.plugin).bold.red, '', err.message, ''].join('\n'));
+
+    if (gutil.env.beep) {
+        gutil.beep();
+    }
+
+    this.emit('end');
+};
 
 // Имена папок
 var config = {
@@ -54,62 +64,96 @@ var plugins = {
             }
         }
     }
-    /*,
+    ,
 
-     autoprefixer: {
-     options: {
-     browsers: [
-     'last 2 version',
-     'Chrome >= 20',
-     'Firefox >= 20',
-     'Opera >= 12',
-     'Android 2.3',
-     'Android >= 4',
-     'iOS >= 6',
-     'Safari >= 6',
-     'Explorer >= 8'
-     ],
-     cascade: false
-     }
-     },
+    autoprefixer: {
+        options: {
+            browsers: [
+                'last 2 version',
+                'Chrome >= 20',
+                'Firefox >= 20',
+                'Opera >= 12',
+                'Android 2.3',
+                'Android >= 4',
+                'iOS >= 6',
+                'Safari >= 6',
+                'Explorer >= 8'
+            ],
+            cascade: false
+        }
+    },
 
-     stylus: {
-     options: {}
-     },
+    stylus: {
+        options: {}
+    },
 
-     cssbeautify: {
-     options: {
-     indent: '	',
-     autosemicolon: true
-     }
-     },
+    cssbeautify: {
+        options: {
+            indent: '	',
+            autosemicolon: true
+        }
+    },
 
-     jade: {
-     options: {
-     pretty: '\t',
-     basedir: config.path.source
-     }
-     },
+    jade: {
+        options: {
+            pretty: '\t',
+            basedir: config.path.source
+        }
+    },
 
-     jadeInheritance: {
-     options: {basedir: config.path.source}
-     },
+    jadeInheritance: {
+        options: {basedir: config.path.source}
+    },
 
-     imagemin: {
-     options: {
-     optimizationLevel: 3,
-     progressive: true,
-     interlaced: true,
-     svgoPlugins: [{removeViewBox: false}],
-     use: [imageminPngquant()]
-     }
-     },
+    imagemin: {
+        options: {
+            optimizationLevel: 3,
+            progressive: true,
+            interlaced: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [imageminPngquant()]
+        }
+    },
 
-     rename: {
-     options: {
-     suffix: ".min"
-     }
-     }*/
+    rename: {
+        options: {
+            suffix: ".min"
+        }
+    }
+};
+
+// Пути к файлам
+var path = {
+    source: {
+        html: [
+            config.path.source + '/**/*.jade',
+            '!' + config.path.source + '/' + config.path.partials + '/**/*.jade'
+        ],
+        css: [
+            config.path.source + '/**/*.styl',
+            '!' + config.path.source + '/**/_*.styl',
+            '!' + config.path.source + '/' + config.path.css + '/lib/**/*.styl'
+        ],
+        img: config.path.source + '/' + config.path.images + '/**/*.{jpg,jpeg,png,gif,svg}',
+        js: config.path.source + '/' + config.path.js + '/**/*.js',
+        copy: config.path.assets + '/**/*'
+    },
+
+    dest: {
+        html: config.path.dist,
+        css: config.path.dist,
+        img: config.path.dist + '/' + config.path.images,
+        js: config.path.dist + '/' + config.path.js,
+        copy: config.path.dist
+    },
+
+    watch: {
+        html: config.path.source + '/**/*.jade',
+        css: config.path.source + '/**/*.styl',
+        img: config.path.source + '/' + config.path.images + '/**/*.{jpg,jpeg,png,gif,svg}',
+        js: config.path.source + '/**/*.js',
+        copy: config.path.assets + '/**/*'
+    }
 };
 
 // Локальный сервер
@@ -121,7 +165,7 @@ gulp.task('browser-sync', function () {
 gulp.task('build', function (cb) {
     return runSequence(
         [
-           // 'stylus',
+            'stylus',
             'jade',
             'images',
             'plugins',
@@ -131,33 +175,31 @@ gulp.task('build', function (cb) {
     );
 });
 
-/*
 
-// Собираем Stylus
-gulp.task('stylus', function() {
-    return gulp.src(path.source.css)
-        .pipe(plumber({
-            errorHandler: errorHandler
-        }))
-        .pipe(stylint())
-        .pipe(stylint.reporter({config: '.stylintrc'}))
-        .pipe(stylus({
-            use: [
-                autoprefixer(plugins.autoprefixer.options)
-            ]
-        }))
-        .pipe(cssbeautify(plugins.cssbeautify.options))
-        .pipe(csscomb())
-        .pipe(gulp.dest(path.dest.css))
-        .pipe(browserSync.stream())
-        .pipe(csso())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(path.dest.css));
-});
-*/
+ // Собираем Stylus
+ gulp.task('stylus', function() {
+ return gulp.src(path.source.css)
+ .pipe(plumber({
+ errorHandler: errorHandler
+ }))
+ .pipe(stylint())
+ .pipe(stylint.reporter({config: '.stylintrc'}))
+ .pipe(stylus({
+ use: [
+ autoprefixer(plugins.autoprefixer.options)
+ ]
+ }))
+ .pipe(cssbeautify(plugins.cssbeautify.options))
+ .pipe(csscomb())
+ .pipe(gulp.dest(path.dest.css))
+ .pipe(browserSync.stream())
+ .pipe(csso())
+ .pipe(rename({suffix: '.min'}))
+ .pipe(gulp.dest(path.dest.css));
+ });
 
 // Собираем html из Jade
-gulp.task('jade', function() {
+gulp.task('jade', function () {
     return gulp.src('source/**/*.jade')
         .pipe(plumber({
             errorHandler: errorHandler
@@ -172,7 +214,7 @@ gulp.task('jade', function() {
 });
 
 // Копируем и минимизируем изображения
-gulp.task('images', function() {
+gulp.task('images', function () {
     return gulp.src(path.source.img)
         .pipe(plumber({
             errorHandler: errorHandler
@@ -183,7 +225,7 @@ gulp.task('images', function() {
 });
 
 // Собираем JS
-gulp.task('plugins', function() {
+gulp.task('plugins', function () {
     return gulp.src(path.source.js)
         .pipe(plumber({
             errorHandler: errorHandler
@@ -196,7 +238,7 @@ gulp.task('plugins', function() {
 });
 
 // Копируем файлы
-gulp.task('copy', function() {
+gulp.task('copy', function () {
     return gulp.src(path.source.copy)
         .pipe(plumber({
             errorHandler: errorHandler
@@ -207,4 +249,10 @@ gulp.task('copy', function() {
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(path.dest.css));
+});
+
+
+// Отчистка папки public
+gulp.task('cleanup', function (cb) {
+    return del(config.path.dist + '/*', cb);
 });
