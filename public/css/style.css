@@ -5,6 +5,23 @@ body
 
 input[type=text]
 {
+    width: 250px;
+    margin-top: 3px;
+    margin-right: 3px;
+
+    border: 3px solid #f70;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    background: #ffb000;
+}
+
+input[type=number]
+{
+    width: 250px;
+    margin-top: 3px;
+    margin-right: 3px;
+
     border: 3px solid #f70;
     -webkit-border-radius: 5px;
        -moz-border-radius: 5px;
@@ -46,9 +63,9 @@ input[type=text]
     position: fixed;
     z-index: 5;
     top: 150px;
-    left: -340px;
+    left: -600px;
 
-    width: 340px;
+    width: 600px;
     height: 150px;
     padding: 10px 0 0 0;
 

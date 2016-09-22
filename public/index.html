@@ -13,19 +13,21 @@
 		<div id="button"><span style="padding-left:5px;">»</span>
 			<div id="s_panel" style="background: rgba(255, 180, 0, 0.85);">
 				<div style="padding-left:9px;" data-nb="1" class="octobird-block">
-					<input id="URLaddress" type="text" name="q" title="" onchange="reloadImages()" onkeypress="reloadImages()" oninput="reloadImages()">
-					<select id="imageUrlMaskSelector" onchange="onSelectUrlMask()"></select><span style="color:green;">URL</span><br>
-					<input id="imageID" type="text" name="q" value="321" title="" onchange="reloadImages()" onkeypress="reloadImages()" oninput="reloadImages()"><span style="color:green;">ID картинки</span><br>
-					<input id="Step" type="text" name="q" value="1" title="" onchange="reloadImages()" onkeypress="reloadImages()" oninput="reloadImages()"><span style="color:green;">Step</span><br>
-					<input id="PicOnPage" type="text" name="q" value="60" title="" onchange="createImageViews()" onkeypress="createImageViews()" oninput="createImageViews()"><span style="color:green;">Картинок на странице</span><br>
-					<input id="user" type="text" title="" name="q" value="http://namba.kg/#!/photo/"><span style="color:green;">Фото в мире</span><br><span style="color:green;">http://mir.namba.kg/personal.php?user=</span>
+					<input id="URLaddress" type="text" onchange="reloadImages()" onkeypress="reloadImages()" oninput="reloadImages()">
+					<select id="imageUrlMaskSelector" onchange="onSelectUrlMask()"></select><span style="color:green;">Image URL mask</span><br>
+					<input id="imageID" type="number" onchange="reloadImages()" onkeypress="reloadImages()" oninput="reloadImages()"><span style="color:green;">Current Image ID</span><br>
+					<input id="PicOnPage" type="number" onchange="createImageViews()" onkeypress="createImageViews()" oninput="createImageViews()"><span style="color:green;">Images on page</span><br>
+					<input id="Step" type="number" onchange="reloadImages()" onkeypress="reloadImages()" oninput="reloadImages()"><span style="color:green;">Step</span><br>
+					<input id="user" type="text"><span style="color:green;">Image detail URL mask</span>
 				</div>
 			</div>
 		</div>
 		<center id="ImageList" style="line-height:0; /*убрать вертикальный отступы*/">no javaScript enabled
 			<!-- Поле для картинок-->
-		</center><br><img src="img/left_arrow.jpg" onclick="left_arrow()"><img src="img/right_arrow.jpg" onclick="right_arrow()">
-		<progress id="progress_bar" value="0" max="100" style="width:100%;"></progress>
+		</center><br>
+		<center><img src="img/left_arrow.jpg" onclick="left_arrow()"><img src="img/right_arrow.jpg" onclick="right_arrow()">
+			<progress id="progress_bar" value="0" max="100" style="width:100%;"></progress>
+		</center>
 		<!-- <input type="text" value="move" id = "move" style="margin: 5px;" readonly/>-->
 		<script>document.onkeyup = key_detect;//Вкл нажатия клавиш</script>
 		<style>

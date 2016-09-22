@@ -13,34 +13,28 @@ html
             span(style='padding-left:5px;') »
             #s_panel(style='background: rgba(255, 180, 0, 0.85);')
                 .octobird-block(style='padding-left:9px;', data-nb='1')
-                    input#URLaddress(
-                    type='text',
-                    name='q',
-                    title='',
-                    onchange='reloadImages()', onkeypress='reloadImages()', oninput='reloadImages()'
-                    )
+                    input#URLaddress( type='text' onchange='reloadImages()', onkeypress='reloadImages()', oninput='reloadImages()' )
                     select#imageUrlMaskSelector(onchange='onSelectUrlMask()')
-                    span(style='color:green;') URL
+                    span(style='color:green;') Image URL mask
                     br
-                    input#imageID(type='text', name='q', value='321', title='', onchange='reloadImages()', onkeypress='reloadImages()', oninput='reloadImages()')
-                    span(style='color:green;') ID картинки
+                    input#imageID(type='number', onchange='reloadImages()', onkeypress='reloadImages()', oninput='reloadImages()')
+                    span(style='color:green;') Current Image ID
                     br
-                    input#Step(type='text', name='q', value='1', title='', onchange='reloadImages()', onkeypress='reloadImages()', oninput='reloadImages()')
+                    input#PicOnPage(type='number', onchange='createImageViews()', onkeypress='createImageViews()', oninput='createImageViews()')
+                    span(style='color:green;') Images on page
+                    br
+                    input#Step(type='number', onchange='reloadImages()', onkeypress='reloadImages()', oninput='reloadImages()')
                     span(style='color:green;') Step
                     br
-                    input#PicOnPage(type='text', name='q', value='60', title='', onchange='createImageViews()', onkeypress='createImageViews()', oninput='createImageViews()')
-                    span(style='color:green;') Картинок на странице
-                    br
-                    input#user(type='text', title='', name='q', value='http://namba.kg/#!/photo/')
-                    span(style='color:green;') Фото в мире
-                    br
-                    span(style='color:green;') http://mir.namba.kg/personal.php?user=
+                    input#user(type='text')
+                    span(style='color:green;') Image detail URL mask
         center#ImageList(style='line-height:0; /*убрать вертикальный отступы*/') no javaScript enabled
                 // Поле для картинок
-        br
-        img(src='img/left_arrow.jpg', onclick='left_arrow()')
-        img(src='img/right_arrow.jpg', onclick='right_arrow()')
-        progress#progress_bar(value='0', max='100', style='width:100%;')
+            br
+        center
+            img(src='img/left_arrow.jpg', onclick='left_arrow()')
+            img(src='img/right_arrow.jpg', onclick='right_arrow()')
+            progress#progress_bar(value='0', max='100', style='width:100%;')
         // <input type="text" value="move" id = "move" style="margin: 5px;" readonly/>
         script.
             document.onkeyup = key_detect;//Вкл нажатия клавиш

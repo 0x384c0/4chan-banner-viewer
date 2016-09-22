@@ -194,7 +194,7 @@ function GalleryDefaultState() {
     if (imageId != undefined)
         this.imageID = imageId;
     else
-        this.imageID = 321;
+        this.imageID = 1;
 
     if (step != undefined)
         this.Step = step;
@@ -204,7 +204,7 @@ function GalleryDefaultState() {
     if (picOnPage != undefined)
         this.PicOnPage = picOnPage;
     else
-        this.PicOnPage = 60;
+        this.PicOnPage = 40;
 
     this.user = "http://namba.kg/#!/photo/";
 }
