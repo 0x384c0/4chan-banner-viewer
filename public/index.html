@@ -7,13 +7,20 @@
 		<script src="js/exp_image_2ch/jquery_002.js"></script>
 		<script src="js/exp_image_2ch/newwakaba.js"></script>
 		<script src="js/exp_image_2ch/swag.js"></script>
+		<script src="js/lenta.js"></script>
+		<script src="js/fly3.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
 		<div id="button"><span style="padding-left:5px;">»</span>
 			<div id="s_panel" style="background: rgba(255, 180, 0, 0.85);">
 				<div style="padding-left:9px;" data-nb="1" class="octobird-block">
-					<input id="URLaddress" type="text" name="q" value="http://d2.files.namba.kg/files/" title="" onchange="REdraw()" onkeypress="REdraw()" oninput="REdraw()"><span style="color:green;">URL</span><br>
+					<input id="URLaddress" type="text" name="q" value="http://d2.files.namba.kg/files/" title="" onchange="REdraw()" onkeypress="REdraw()" oninput="REdraw()">
+					<select id="urls">
+						<option value="Namba">Namba</option>
+						<option value="4chan png">4chan png</option>
+						<option value="4chan gif">4chan gif</option>
+					</select><span style="color:green;">URL</span><br>
 					<input id="imageID" type="text" name="q" value="321" title="" onchange="REdraw()" onkeypress="REdraw()" oninput="REdraw()"><span style="color:green;">ID картинки</span><br>
 					<input id="Step" type="text" name="q" value="1" title="" onchange="REdraw()" onkeypress="REdraw()" oninput="REdraw()"><span style="color:green;">Step</span><br>
 					<input id="PicOnPage" type="text" name="q" value="60" title="" onchange="Create()" onkeypress="Create()" oninput="Create()"><span style="color:green;">Картинок на странице</span><br>
@@ -42,8 +49,6 @@
 			    background: url('img/lenta-pattern.png');
 			}
 		</style>
-		<script src="js/lenta.js"></script>
-		<script src="js/fly3.js"></script>
 		<input id="w8-grey1" type="button" value="Ленточка" onclick="onoffanim()" name="w8-grey" style="margin: 5px;" class="w8-button grey">
 		<input id="w8-grey2" type="button" value="Fly" onclick="onoffanimFly3()" name="w8-grey" style="margin: 5px;" class="w8-button grey">
 	</body>
