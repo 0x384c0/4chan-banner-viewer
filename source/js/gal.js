@@ -1,14 +1,17 @@
 //constants
-var imageUrlMasks = {
-    "Namba"     : "http://d2.files.namba.kg/files/",
-    "4chanGif"  : "http://s.4cdn.org/image/title/@d.gif",
-    "4chanPng"  : "http://s.4cdn.org/image/title/@d.png"
+var
+    imageIdPlaceholder = "<image_id>";
+    imageUrlMasks = {
+    "Namba"     : "http://d2.files.namba.kg/files/" + imageIdPlaceholder,
+    "4chanGif"  : "http://s.4cdn.org/image/title/" + imageIdPlaceholder + ".gif",
+    "4chanPng"  : "http://s.4cdn.org/image/title/" + imageIdPlaceholder + ".png"
 };
 //UI elements
 var picOnPageInput,
     currentImageIdInput,
     imageUrlMaskSelector,
-    imageUrlMaskInput;
+    imageUrlMaskInput,
+    imageContainer;
 //vars
 var cur_fulscreen_image = 1;
 
@@ -25,10 +28,12 @@ function bindViews() {
     imageUrlMaskSelector    = document.getElementById("imageUrlMaskSelector");
     imageUrlMaskInput       = document.getElementById("URLaddress");
     currentImageIdInput     = document.getElementById("imageID");
+    imageContainer          = document.getElementById("ImageList");
 }
 function loadDataToUrlSelector() {
     for (var imageMask in imageUrlMasks){
         var opt = document.createElement('option');
+        //noinspection JSUnfilteredForInLoop
         opt.value = imageUrlMasks[imageMask];
         opt.innerHTML = imageMask;
         imageUrlMaskSelector.appendChild(opt);
@@ -36,18 +41,64 @@ function loadDataToUrlSelector() {
 }
 
 function createImageViews() {
+    while (imageContainer.firstChild) {
+        imageContainer.removeChild(imageContainer.firstChild);
+    }
+
 
     var imageViewsHtmlText = "";
-    for (i = 1; i <= picOnPageInput.value; i++) {
+    for (var i = 1; i <= picOnPageInput.value; i++) {
         imageViewsHtmlText = imageViewsHtmlText +
-            "<span id='exlink-" + i + "' class='image-link'><a href=''id = 'img_href" + i +
-            "' target='_blank' name='expandfunc' onclick=" + '"' + "return click_on_img(" + i + ")" +
-            '"' + " oncontextmenu=" + '"' + "return rclick_on_img(" + i + ")" + '"' +
-            "  ><img src='' width = '120' height = '120'  id = 'img" +  i +
-            "' class='img preview' onload = " + '"' + "inc_prbar();" + '"' +
-            " onerror = " + '"' + "inc_prbar();" + '"' + "/></a></span>";
+        "<span " +
+        "id             = 'exlink-" + i + "' " +
+        "class          = 'image-link'>" +
+        "<a " +
+        "href           = '' " +
+        "id             = 'img_href" + i + "' " +
+        "target         = '_blank' " +
+        "name           = 'expandfunc' " +
+        "onclick        =  \""   + "return click_on_img(" + i + ")"      + "\" " +
+        "oncontextmenu  =  \""   + "return rclick_on_img(" + i + ")"     + "\">" +
+        "<img " +
+        "src            ='' " +
+        "width          = '120' " +
+        "height         = '120'  " +
+        "id             = 'img" +  i + "' " +
+        "class          = 'img preview' " +
+        "onload         = \"" + "inc_prbar();" + "\" " +
+        "onerror        = \"" + "inc_prbar();" + "\" " +
+        "/></a></span>";
     }
     document.getElementById("ImageList").innerHTML = imageViewsHtmlText;//paste generated image views in to div
+
+
+    // for (var i = 1; i <= picOnPageInput.value; i++) {
+    //     var span = document.createElement('span');
+    //     span.id = 'exlink-' + i;
+    //     span.class ='image-link';
+    //
+    //     var a = document.createElement('a');
+    //     a.href = '';
+    //     a.id = 'img_href' + i;
+    //     a.target = '_blank';
+    //     a.name='expandfunc';
+    //     a.onclick = "\"return click_on_img(" + i + ");\"'";
+    //     a.oncontextmenu = "\"return rclick_on_img(" + i + ");\"";
+    //
+    //     var img = document.createElement('img');
+    //     img.src = '';
+    //     img.width = '120';
+    //     img.height = '120';
+    //     img.id = 'img' + i;
+    //     img.class='img preview';
+    //     img.onLoad = function(){inc_prbar();};
+    //     img.onError = function(){inc_prbar();};
+    //
+    //     a.appendChild(img);
+    //     span.appendChild(a);
+    //     imageContainer.appendChild(span);
+    // }
+
     reloadImages();
     reset_prbar();
 }
@@ -59,12 +110,13 @@ function reloadImages() {
 
     var i = 1;
     while (i <= picOnPageInput.value) { //отрисовка остальных картинок
+        var imageSrc = getImageUrl(imageUrlMaskInput.value,to);
 
         var img = document.getElementById("img" + i);//картинка как obj
-        img.src = document.getElementById("URLaddress").value + to;//задать новую ссылку для  картинки
+        img.src = imageSrc;//задать новую ссылку для  картинки
 
         var img_href = document.getElementById("img_href" + i);//задать новую ссылку для картинки для клика
-        img_href.href = document.getElementById("URLaddress").value + to;//вывод
+        img_href.href = imageSrc;//вывод
         to = to + parseInt(document.getElementById("Step").value);//ID ссылка для след картинки
 
         /*obj.onclick =  function(){var tmp_i = i; return  click_on_img()};//return не дает открыться картинке в новой вкладке*/
@@ -132,13 +184,15 @@ function key_detect(event) {
 //State
 function GalleryDefaultState() {
     //default values
-    this.URLaddress = "http://d2.files.namba.kg/files/";
+    this.URLaddress = imageUrlMasks["Namba"];//"http://d2.files.namba.kg/files/";
 
-    var imageid = getCookie(self.imageID);
-    var step = getCookie(self.Step);
+    var
+        imageId     = getCookie(self.imageID),
+        step        = getCookie(self.Step),
+        picOnPage   = getCookie(self.PicOnPage);
 
-    if (imageid != undefined)
-        this.imageID = imageid;
+    if (imageId != undefined)
+        this.imageID = imageId;
     else
         this.imageID = 321;
 
@@ -147,10 +201,12 @@ function GalleryDefaultState() {
     else
         this.Step = 1;
 
-    this.PicOnPage = 60;
+    if (picOnPage != undefined)
+        this.PicOnPage = picOnPage;
+    else
+        this.PicOnPage = 60;
+
     this.user = "http://namba.kg/#!/photo/";
-
-
 }
 
 function loadStateFromCookies() {
@@ -158,14 +214,20 @@ function loadStateFromCookies() {
     imageUrlMaskInput.value = state.URLaddress;
     currentImageIdInput.value = state.imageID;
     document.getElementById("Step").value = state.Step;
-    document.getElementById("PicOnPage").value = state.PicOnPage;
     document.getElementById("user").value = state.user;
+    picOnPageInput.value = state.PicOnPage;
 }
 function saveStateToCookies(){
-    var to = currentImageIdInput.value;//получить ID картинки
-    setCookie(self.imageID, to, "Mon, 01-Jan-3000 00:00:00 GMT", "/");
-    var step = document.getElementById("Step").value;//получить шаг
-    setCookie(self.Step, step, "Mon, 01-Jan-3000 00:00:00 GMT", "/");
+    var expires = "Mon, 01-Jan-3000 00:00:00 GMT";
+
+    var to = currentImageIdInput.value;//get image id
+    setCookie(self.imageID, to, expires, "/");
+
+    var step = document.getElementById("Step").value;//get step
+    setCookie(self.Step, step, expires, "/");
+
+    var picOnPage = picOnPageInput.value;//get PicOnPage
+    setCookie(self.PicOnPage, picOnPage, expires, "/");
 }
 
 //alert('message');
@@ -210,4 +272,10 @@ function setCookie (name, value, expires, path, domain, secure) {
         ((secure) ? "; secure" : "");
 
 
+}
+
+
+//helper functions
+function getImageUrl(urlMask,imageId) {
+    return urlMask.replace(imageIdPlaceholder,imageId);
 }
