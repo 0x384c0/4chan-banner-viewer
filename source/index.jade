@@ -18,33 +18,29 @@ html
                     name='q',
                     value='http://d2.files.namba.kg/files/',
                     title='',
-                    onchange='REdraw()', onkeypress='REdraw()', oninput='REdraw()'
+                    onchange='reloadImages()', onkeypress='reloadImages()', oninput='reloadImages()'
                     )
-                    select#urls
-                        option(value='Namba') Namba
-                        option(value='4chan png') 4chan png
-                        option(value='4chan gif') 4chan gif
+                    select#imageUrlMaskSelector(onchange='onSelectUrlMask()')
                     span(style='color:green;') URL
                     br
-                    input#imageID(type='text', name='q', value='321', title='', onchange='REdraw()', onkeypress='REdraw()', oninput='REdraw()')
+                    input#imageID(type='text', name='q', value='321', title='', onchange='reloadImages()', onkeypress='reloadImages()', oninput='reloadImages()')
                     span(style='color:green;') ID картинки
                     br
-                    input#Step(type='text', name='q', value='1', title='', onchange='REdraw()', onkeypress='REdraw()', oninput='REdraw()')
+                    input#Step(type='text', name='q', value='1', title='', onchange='reloadImages()', onkeypress='reloadImages()', oninput='reloadImages()')
                     span(style='color:green;') Step
                     br
-                    input#PicOnPage(type='text', name='q', value='60', title='', onchange='Create()', onkeypress='Create()', oninput='Create()')
+                    input#PicOnPage(type='text', name='q', value='60', title='', onchange='createImageViews()', onkeypress='createImageViews()', oninput='createImageViews()')
                     span(style='color:green;') Картинок на странице
                     br
                     input#user(type='text', title='', name='q', value='http://namba.kg/#!/photo/')
                     span(style='color:green;') Фото в мире
                     br
                     span(style='color:green;') http://mir.namba.kg/personal.php?user=
-        center
-            #ImageList(style='line-height:0; /*убрать вертикальный отступы*/')
+        center#ImageList(style='line-height:0; /*убрать вертикальный отступы*/') no javaScript enabled
                 // Поле для картинок
-            br
-            img(src='img/left_arrow.jpg', onclick='left_arrow()')
-            img(src='img/right_arrow.jpg', onclick='right_arrow()')
+        br
+        img(src='img/left_arrow.jpg', onclick='left_arrow()')
+        img(src='img/right_arrow.jpg', onclick='right_arrow()')
         progress#progress_bar(value='0', max='100', style='width:100%;')
         // <input type="text" value="move" id = "move" style="margin: 5px;" readonly/>
         script.

@@ -1,22 +1,45 @@
-var pic_on_page;//картинок на странице
-var cur_fulscreen_image = 1;//номер картинка ктоорая во весь экран
+//constants
+var imageUrlMasks = {
+    "Namba"     : "http://d2.files.namba.kg/files/",
+    "4chanGif"  : "http://s.4cdn.org/image/title/@d.gif",
+    "4chanPng"  : "http://s.4cdn.org/image/title/@d.png"
+};
+//UI elements
+var picOnPageInput,
+    currentImageIdInput,
+    imageUrlMaskSelector,
+    imageUrlMaskInput;
+//vars
+var cur_fulscreen_image = 1;
 
-var loaded_imgs = 0;//счетчик прогресс бара
-function inc_prbar() {
-    loaded_imgs++;
-    document.getElementById("progress_bar").value++;
+//LifeCycle
+window.addEventListener("DOMContentLoaded", domContentLoaded);
+function domContentLoaded() {
+    bindViews();
+    loadDataToUrlSelector();
+    loadStateFromCookies();
+    createImageViews();
 }
-function reset_prbar() {//сброс счетчика прогресс бара
-    loaded_imgs = 0;
-    document.getElementById("progress_bar").value = 0;
-    document.getElementById("progress_bar").max = pic_on_page;
+function bindViews() {
+    picOnPageInput          = document.getElementById("PicOnPage");
+    imageUrlMaskSelector    = document.getElementById("imageUrlMaskSelector");
+    imageUrlMaskInput       = document.getElementById("URLaddress");
+    currentImageIdInput     = document.getElementById("imageID");
+}
+function loadDataToUrlSelector() {
+    for (var imageMask in imageUrlMasks){
+        var opt = document.createElement('option');
+        opt.value = imageUrlMasks[imageMask];
+        opt.innerHTML = imageMask;
+        imageUrlMaskSelector.appendChild(opt);
+    }
 }
 
-function Create() {
-    pic_on_page = document.getElementById("PicOnPage").value;//Кол-во картинок сохранить
-    var imagelisttmp = "";//формирование html текста
-    for (i = 1; i <= pic_on_page; i++) {
-        imagelisttmp = imagelisttmp +
+function createImageViews() {
+
+    var imageViewsHtmlText = "";
+    for (i = 1; i <= picOnPageInput.value; i++) {
+        imageViewsHtmlText = imageViewsHtmlText +
             "<span id='exlink-" + i + "' class='image-link'><a href=''id = 'img_href" + i +
             "' target='_blank' name='expandfunc' onclick=" + '"' + "return click_on_img(" + i + ")" +
             '"' + " oncontextmenu=" + '"' + "return rclick_on_img(" + i + ")" + '"' +
@@ -24,18 +47,18 @@ function Create() {
             "' class='img preview' onload = " + '"' + "inc_prbar();" + '"' +
             " onerror = " + '"' + "inc_prbar();" + '"' + "/></a></span>";
     }
-    document.getElementById("ImageList").innerHTML = imagelisttmp;//вывод html на страницу
-    REdraw();
+    document.getElementById("ImageList").innerHTML = imageViewsHtmlText;//paste generated image views in to div
+    reloadImages();
     reset_prbar();
 }
 
 
-function REdraw() {
-    var to = document.getElementById("imageID").value;//получить ID картинки
+function reloadImages() {
+    var to = currentImageIdInput.value;//получить ID картинки
     to = parseInt(to);//преобразовать в int
 
     var i = 1;
-    while (i <= pic_on_page) { //отрисовка остальных картинок
+    while (i <= picOnPageInput.value) { //отрисовка остальных картинок
 
         var img = document.getElementById("img" + i);//картинка как obj
         img.src = document.getElementById("URLaddress").value + to;//задать новую ссылку для  картинки
@@ -52,6 +75,13 @@ function REdraw() {
     saveStateToCookies();
 }
 
+//UI actions
+function onSelectUrlMask() {
+    imageUrlMaskInput.value = imageUrlMaskSelector.value
+    reloadImages();
+    reset_prbar();
+}
+
 function click_on_img(i)//нажатие левой кнопки - во весь экран
 {
     cur_fulscreen_image = i;
@@ -61,29 +91,25 @@ function click_on_img(i)//нажатие левой кнопки - во весь
     var img_src = myimage.src;
     return expand('1', img_src, '', rw, rh, 220, 220);
 }
-
 function rclick_on_img(i)//нажатие правой кнопки
 {
-    var imgid = parseInt(document.getElementById("imageID").value) + i * parseInt(document.getElementById("Step").value) - 1;
+    var imgid = parseInt(currentImageIdInput.value) + i * parseInt(document.getElementById("Step").value) - 1;
     var img_src = document.getElementById("user").value + imgid;
     window.open(img_src, '_blank');
     return false;
 }
-
 function right_arrow() // Открытие следующей картинки(движение вправо)
 {
-    document.getElementById("imageID").value = parseInt(document.getElementById("imageID").value) + parseInt(document.getElementById("Step").value) * (pic_on_page);//новый imageID
+    currentImageIdInput.value = parseInt(currentImageIdInput.value) + parseInt(document.getElementById("Step").value) * (picOnPageInput.value);//новый imageID
 
-    REdraw();
+    reloadImages();
 }
-
 function left_arrow() // Открытие предыдущей картинки(движение влево)
 {
-    document.getElementById("imageID").value = parseInt(document.getElementById("imageID").value) - parseInt(document.getElementById("Step").value) * (pic_on_page);//новый imageID
+    currentImageIdInput.value = parseInt(currentImageIdInput.value) - parseInt(document.getElementById("Step").value) * (picOnPageInput.value);//новый imageID
 
-    REdraw();
+    reloadImages();
 }
-
 function key_detect(event) {
     switch (event.keyCode) {
         case 37:
@@ -103,18 +129,7 @@ function key_detect(event) {
     }
 }
 
-window.addEventListener("DOMContentLoaded", loadStateToWindow);
-function loadStateToWindow() {
-    var state = new GalleryDefaultState();
-    document.getElementById("URLaddress").value = state.URLaddress;
-    document.getElementById("imageID").value = state.imageID;
-    document.getElementById("Step").value = state.Step;
-    document.getElementById("PicOnPage").value = state.PicOnPage;
-    document.getElementById("user").value = state.user;
-    Create();
-}
-
-
+//State
 function GalleryDefaultState() {
     //default values
     this.URLaddress = "http://d2.files.namba.kg/files/";
@@ -138,8 +153,16 @@ function GalleryDefaultState() {
 
 }
 
+function loadStateFromCookies() {
+    var state = new GalleryDefaultState();
+    imageUrlMaskInput.value = state.URLaddress;
+    currentImageIdInput.value = state.imageID;
+    document.getElementById("Step").value = state.Step;
+    document.getElementById("PicOnPage").value = state.PicOnPage;
+    document.getElementById("user").value = state.user;
+}
 function saveStateToCookies(){
-    var to = document.getElementById("imageID").value;//получить ID картинки
+    var to = currentImageIdInput.value;//получить ID картинки
     setCookie(self.imageID, to, "Mon, 01-Jan-3000 00:00:00 GMT", "/");
     var step = document.getElementById("Step").value;//получить шаг
     setCookie(self.Step, step, "Mon, 01-Jan-3000 00:00:00 GMT", "/");
@@ -147,6 +170,17 @@ function saveStateToCookies(){
 
 //alert('message');
 
+//progress bar
+var loaded_imgs = 0;//счетчик прогресс бара
+function inc_prbar() {
+    loaded_imgs++;
+    document.getElementById("progress_bar").value++;
+}
+function reset_prbar() {//сброс счетчика прогресс бара
+    loaded_imgs = 0;
+    document.getElementById("progress_bar").value = 0;
+    document.getElementById("progress_bar").max = picOnPageInput.value;
+}
 
 //cookies
 var
