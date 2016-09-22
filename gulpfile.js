@@ -1,4 +1,5 @@
 'use strict';
+//npm gulp gulp-jade gulp-stylus autoprefixer-stylus gulp-imagemin browser-sync gulp-cssbeautify gulp-util install gulp-imagemin browser-sync gulp-cssbeautify gulp-util gulp-newer gulp-include gulp-rename gulp-uglify imagemin-pngquant gulp-csscomb gulp-csso gulp-filter gulp-plumber del gulp-jade-inheritance gulp-if gulp-cached gulp-changed gulp-filter gulp-stylint
 
 // Инициализируем плагины
 var gulp = require('gulp'),
@@ -19,8 +20,8 @@ var gulp = require('gulp'),
     gulpFilter = require('gulp-filter'),
     plumber = require('gulp-plumber'),
     del = require('del'),
-    runSequence = require('run-sequence'),
-    watch = require('gulp-watch'),
+    // runSequence = require('run-sequence'),
+    // watch = require('gulp-watch'),
     // gulpZip = require('gulp-zip'),
     // nodePath = require('path'),
     jadeInheritance = require('gulp-jade-inheritance'),
@@ -29,7 +30,6 @@ var gulp = require('gulp'),
     changed = require('gulp-changed'),
     filter = require('gulp-filter'),
     stylint = require('gulp-stylint');
-
 
 var errorHandler = function(err) {
     gutil.log([(err.name + ' in ' + err.plugin).bold.red, '', err.message, ''].join('\n'));
