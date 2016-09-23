@@ -2,7 +2,6 @@
 var
     imageIdPlaceholder = "<image_id>";
     imageUrlMasks = {
-    "Namba"     : "http://d2.files.namba.kg/files/" + imageIdPlaceholder,
     "4chanGif"  : "http://s.4cdn.org/image/title/" + imageIdPlaceholder + ".gif",
     "4chanPng"  : "http://s.4cdn.org/image/title/" + imageIdPlaceholder + ".png"
 };
@@ -57,8 +56,7 @@ function createImageViews() {
         "id             = 'img_href" + i + "' " +
         "target         = '_blank' " +
         "name           = 'expandfunc' " +
-        "onclick        =  \""   + "return click_on_img(" + i + ")"      + "\" " +
-        "oncontextmenu  =  \""   + "return rclick_on_img(" + i + ")"     + "\">" +
+        "onclick        =  \""   + "return click_on_img(" + i + ")"      + "\">" +
         "<img " +
         "src            ='' " +
         "width          = '120' " +
@@ -83,7 +81,6 @@ function createImageViews() {
     //     a.target = '_blank';
     //     a.name='expandfunc';
     //     a.onclick = "\"return click_on_img(" + i + ");\"'";
-    //     a.oncontextmenu = "\"return rclick_on_img(" + i + ");\"";
     //
     //     var img = document.createElement('img');
     //     img.src = '';
@@ -151,12 +148,6 @@ function click_on_img(i){//нажатие левой кнопки - во вес�
     var img_src = myimage.src;
     return expand('1', img_src, '', rw, rh, 220, 220);
 }
-function rclick_on_img(i){//нажатие правой кнопки
-    var imgid = parseInt(currentImageIdInput.value) + i * parseInt(document.getElementById("Step").value) - 1;
-    var img_src = document.getElementById("user").value + imgid;
-    window.open(img_src, '_blank');
-    return false;
-}
 function right_arrow(){ // Открытие следующей картинки(движение вправо)
     currentImageIdInput.value = parseInt(currentImageIdInput.value) + parseInt(document.getElementById("Step").value) * (picOnPageInput.value);//новый imageID
     reloadImages();
@@ -213,8 +204,6 @@ function GalleryDefaultState() {
         this.ImageUrlMask = imageUrlMask;
     else
         this.ImageUrlMask = imageUrlMasks["4chanGif"];
-
-    this.user = "http://namba.kg/#!/photo/";
 }
 
 function loadStateFromCookies() {
@@ -223,7 +212,6 @@ function loadStateFromCookies() {
     currentImageIdInput.value   = state.imageID;
     picOnPageInput.value        = state.PicOnPage;
     document.getElementById("Step").value = state.Step;
-    document.getElementById("user").value = state.user;
 
 
     var didSetSelectionForImageUrlMaskSelector = false;

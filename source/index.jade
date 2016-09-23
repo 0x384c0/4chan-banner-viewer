@@ -23,11 +23,8 @@ html
                     input#PicOnPage(type='number', onchange='createImageViews()', onkeypress='createImageViews()', oninput='createImageViews()')
                     span(style='color:green;') Images on page
                     br
-                    input#Step(type='number', onchange='reloadImages()', onkeypress='reloadImages()', oninput='reloadImages()')
-                    span(style='color:green;') Step
-                    br
-                    input#user(type='text')
-                    span(style='color:green;') Image detail URL mask
+                    input#Step(type='number', onchange='reloadImages()', onkeypress='reloadImages()', oninput='reloadImages()',style="display: none;" )
+                    //span(style='color:green;') Step
         center#ImageList(style='line-height:0; /*убрать вертикальный отступы*/') no javaScript enabled
                 // Поле для картинок
             br
@@ -50,9 +47,5 @@ html
                 left: 0px;
                 background: url('img/lenta-pattern.png');
             }
-        script(src='js/lenta.js')
-        script(src='js/fly3.js')
-        input#w8-grey1.w8-button.grey(type='button', value='Ленточка', onclick='onoffanim()', name='w8-grey', style='margin: 5px;')
-        input#w8-grey2.w8-button.grey(type='button', value='Fly', onclick='onoffanimFly3()', name='w8-grey', style='margin: 5px;')
 
 

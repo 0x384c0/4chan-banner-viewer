@@ -65,9 +65,10 @@ input[type=number]
     top: 150px;
     left: -600px;
 
+    display: inline-block;
+
     width: 600px;
-    height: 150px;
-    padding: 10px 0 0 0;
+    padding: 10px 0 13px 0;
 
     -webkit-transition-duration: .3s;
          -o-transition-duration: .3s;
