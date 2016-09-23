@@ -1,5 +1,6 @@
 {
   "projects": {
-    "staging": "experiments-nodejs"
+    "staging": "experiments-nodejs",
+    "default": "fourchan-banner-viewer"
   }
 }
