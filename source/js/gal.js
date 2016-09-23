@@ -105,9 +105,9 @@ function createImageViews() {
 
 
 function reloadImages() {
-    var to = currentImageIdInput.value;//получить ID картинки
-    to = parseInt(to);//преобразовать в int
-
+    validateInputs();
+    var to = currentImageIdInput.value;//get image id
+    to = parseInt(to);
     var i = 1;
     while (i <= picOnPageInput.value) { //отрисовка остальных картинок
         var imageSrc = getImageUrl(imageUrlMaskInput.value,to);
@@ -126,16 +126,24 @@ function reloadImages() {
     reset_prbar();
     saveStateToCookies();
 }
+function validateInputs() {
+    if (currentImageIdInput.value < 0) {
+        currentImageIdInput.value = 0
+    }
+    if (picOnPageInput.value < 2) {
+        picOnPageInput.value = 2
+    }
+}
 
 //UI actions
 function onSelectUrlMask() {
-    imageUrlMaskInput.value = imageUrlMaskSelector.value
+    imageUrlMaskInput.value = imageUrlMaskSelector.value;
+    currentImageIdInput.value = 0;
     reloadImages();
     reset_prbar();
 }
 
-function click_on_img(i)//нажатие левой кнопки - во весь экран
-{
+function click_on_img(i){//нажатие левой кнопки - во весь экран
     cur_fulscreen_image = i;
     var myimage = document.getElementById("img" + i);
     var rw = myimage.naturalWidth;  // real image width 
@@ -143,23 +151,18 @@ function click_on_img(i)//нажатие левой кнопки - во весь
     var img_src = myimage.src;
     return expand('1', img_src, '', rw, rh, 220, 220);
 }
-function rclick_on_img(i)//нажатие правой кнопки
-{
+function rclick_on_img(i){//нажатие правой кнопки
     var imgid = parseInt(currentImageIdInput.value) + i * parseInt(document.getElementById("Step").value) - 1;
     var img_src = document.getElementById("user").value + imgid;
     window.open(img_src, '_blank');
     return false;
 }
-function right_arrow() // Открытие следующей картинки(движение вправо)
-{
+function right_arrow(){ // Открытие следующей картинки(движение вправо)
     currentImageIdInput.value = parseInt(currentImageIdInput.value) + parseInt(document.getElementById("Step").value) * (picOnPageInput.value);//новый imageID
-
     reloadImages();
 }
-function left_arrow() // Открытие предыдущей картинки(движение влево)
-{
+function left_arrow(){ // Открытие предыдущей картинки(движение влево)
     currentImageIdInput.value = parseInt(currentImageIdInput.value) - parseInt(document.getElementById("Step").value) * (picOnPageInput.value);//новый imageID
-
     reloadImages();
 }
 function key_detect(event) {
