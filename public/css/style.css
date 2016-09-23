@@ -4,7 +4,7 @@ body
     background: #ffe url('http://s.4cdn.org/image/fp/fade.png') top repeat-x;
 }
 
-img.img_preview
+img[name=img_preview]
 {
     width: 300px;
     height: 100px;

@@ -55,13 +55,14 @@ function createImageViews() {
         "<a " +
         "href           = '' " +
         "id             = 'img_href" + i + "' " +
-        "target         = '_blank' " +
         "name           = 'expandfunc' " +
-        "onclick        =  \""   + "return click_on_img(" + i + ")"      + "\">" +
+        "onclick        = 'return click_on_img(" + i + ")' " +
+        "target         = '_blank' >" +
         "<img " +
-        "src            ='' " +
+        "src            = '' " +
         "id             = 'img" +  i + "' " +
-        "class          = 'img_preview' " +
+        "name           = 'img_preview' " +
+        "class          = 'img preview' " +
         "onload         = \"" + "inc_prbar();" + "\" " +
         "onerror        = \"" + "inc_prbar();" + "\" " +
         "/></a></span>";
@@ -142,10 +143,16 @@ function onSelectUrlMask() {
 function click_on_img(i){//нажатие левой кнопки - во весь экран
     cur_fulscreen_image = i;
     var myimage = document.getElementById("img" + i);
-    var rw = myimage.naturalWidth;  // real image width
-    var rh = myimage.naturalHeight; // real image height
+    var rw = myimage.naturalWidth   * 2;  // real image width
+    var rh = myimage.naturalHeight  * 2; // real image height
     var img_src = myimage.src;
+    //alert('1' +" "+ img_src +" "+ rw +" "+ rh);
     return expand('1', img_src, '', rw, rh, 220, 220);
+}
+function rclick_on_img(i){//нажатие правой кнопки
+    var myImage = document.getElementById("img" + i);
+    window.open(myImage.src, '_blank');
+    return false;
 }
 function right_arrow(){ // Открытие следующей картинки(движение вправо)
     currentImageIdInput.value = parseInt(currentImageIdInput.value) + parseInt(document.getElementById("Step").value) * (picOnPageInput.value);//новый imageID
