@@ -146,7 +146,7 @@ function onSelectUrlMask() {
 function click_on_img(i){//нажатие левой кнопки - во весь экран
     cur_fulscreen_image = i;
     var myimage = document.getElementById("img" + i);
-    var rw = myimage.naturalWidth;  // real image width 
+    var rw = myimage.naturalWidth;  // real image width
     var rh = myimage.naturalHeight; // real image height
     var img_src = myimage.src;
     return expand('1', img_src, '', rw, rh, 220, 220);
@@ -187,12 +187,12 @@ function key_detect(event) {
 //State
 function GalleryDefaultState() {
     //default values
-    this.URLaddress = imageUrlMasks["Namba"];//"http://d2.files.namba.kg/files/";
 
     var
-        imageId     = getCookie(self.imageID),
-        step        = getCookie(self.Step),
-        picOnPage   = getCookie(self.PicOnPage);
+        imageId         = getCookie(self.imageID),
+        step            = getCookie(self.Step),
+        picOnPage       = getCookie(self.PicOnPage),
+        imageUrlMask    = getCookie(self.ImageUrlMask);
 
     if (imageId != undefined)
         this.imageID = imageId;
@@ -209,16 +209,37 @@ function GalleryDefaultState() {
     else
         this.PicOnPage = 40;
 
+    if (imageUrlMask != undefined)
+        this.ImageUrlMask = imageUrlMask;
+    else
+        this.ImageUrlMask = imageUrlMasks["4chanGif"];
+
     this.user = "http://namba.kg/#!/photo/";
 }
 
 function loadStateFromCookies() {
     var state = new GalleryDefaultState();
-    imageUrlMaskInput.value = state.URLaddress;
-    currentImageIdInput.value = state.imageID;
+    imageUrlMaskInput.value     = state.ImageUrlMask;
+    currentImageIdInput.value   = state.imageID;
+    picOnPageInput.value        = state.PicOnPage;
     document.getElementById("Step").value = state.Step;
     document.getElementById("user").value = state.user;
-    picOnPageInput.value = state.PicOnPage;
+
+
+    var didSetSelectionForImageUrlMaskSelector = false;
+    for (var imageMask in imageUrlMasks){
+        //noinspection JSUnfilteredForInLoop
+        var value = imageUrlMasks[imageMask];
+        if (value == String(state.ImageUrlMask)){
+            imageUrlMaskSelector.value = value;
+            didSetSelectionForImageUrlMaskSelector = true;
+            break;
+        }
+    }
+    if (!didSetSelectionForImageUrlMaskSelector){
+        imageUrlMaskSelector.value = null;
+    }
+
 }
 function saveStateToCookies(){
     var expires = "Mon, 01-Jan-3000 00:00:00 GMT";
@@ -231,6 +252,9 @@ function saveStateToCookies(){
 
     var picOnPage = picOnPageInput.value;//get PicOnPage
     setCookie(self.PicOnPage, picOnPage, expires, "/");
+
+    var imageUrlMask = imageUrlMaskInput.value;//get ImageUrlMask
+    setCookie(self.ImageUrlMask, imageUrlMask, expires, "/");
 }
 
 //alert('message');
@@ -249,7 +273,7 @@ function reset_prbar() {//сброс счетчика прогресс бара
 
 //cookies
 var
-    URLaddress = "cookies.URLaddress",
+    ImageUrlMask = "cookies.ImageUrlMask",
     imageID = "cookies.imageID",
     Step = "cookies.Step",
     PicOnPage = "cookies.PicOnPage",
