@@ -1,5 +1,12 @@
+
 body
-  background-color: #000000
+  background #ffe url('http://s.4cdn.org/image/fp/fade.png') top repeat-x
+  color #800
+
+img
+  &.img_preview
+    width:300px
+    height:100px
 
 input[type=text]
   background: #ffb000
@@ -47,9 +54,8 @@ input[type=number]
   top: 150px
   left: -600px
   background: #ff7700
-  width: 600px
   display: inline-block
-  padding: 10px 0 13px 0
+  padding: 10px 13px 13px 0
   z-index: 5
   -webkit-transition-duration: 0.3s
   -moz-transition-duration: 0.3s
@@ -59,95 +65,7 @@ input[type=number]
   -moz-border-radius: 0 5px 5px 0
   border-radius: 0 5px 5px 0
 
+
+
 *
   color: white
-
-.w8-button
-  display: table
-  padding: 7px 15px 8px 15px
-  border: none
-  font-family: "open_sans_lightregular"
-  font-size: 13px
-  font-weight: bold
-  cursor: pointer
-  opacity: 0.9
-  -webkit-transition-duration: 0.3s
-  -moz-transition-duration: 0.3s
-  -o-transition-duration: 0.3s
-  transition-duration: 0.3s
-  &:hover
-    border-left: solid 3px white
-
-.w8-button:hover, .w8-icon:hover
-  opacity: 1
-
-.w8-button:active, .w8-icon:active
-  color white !important
-  background-color: #191919 !important
-
-.w8-button.red, .w8-icon.red
-  background-color: #d9522c
-
-.w8-button.green, .w8-icon.green
-  background-color: #009900
-
-.w8-button.pink, .w8-icon.pink
-  background-color: #ae193e
-
-.w8-button.d-blue, .w8-icon.d-blue
-  background-color: #0099ab
-
-.w8-button.yellow, .w8-icon.yellow
-  background-color: #fba919
-
-.w8-button.l-blue, .w8-icon.l-blue
-  background-color: #2d87ef
-
-.w8-button.violet, .w8-icon.violet
-  background-color: #5b39b6
-
-.w8-button.grey, .w8-icon.grey
-  background-color: #474747
-
-ul
-  &.buttons
-    display: table
-    padding-right: 20px
-    margin: 20px auto
-    list-style: none
-    &:last-child
-      padding-right: 0
-    li
-      float: left
-      margin-right: 12px
-      &:last-child
-        margin-righ:t 0
-  &.buttons-icon
-    display: table
-    list-style: none
-    margin: 0px auto
-    li
-      float: left
-      margin-right: 10px
-      &:last-child
-        margin-right: 0
-
-div#text
-  text-align: center
-  font-family: "open_sans_lightregular"
-  font-size: 52px
-  width: 600px
-  margin: 0 auto
-  margin-top: 50px
-
-div#smalltext
-  text-align: right
-  font-family: "open_sans_lightregular"
-  font-size: 15px
-  width: 520px
-  margin: 0 auto
-
-div#content
-  display: table
-  margin: 0 auto
-  padding: 30px

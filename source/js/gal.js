@@ -1,5 +1,6 @@
 //constants
 var
+    defaultPicsOnPage = 28;
     imageIdPlaceholder = "<image_id>";
     imageUrlMasks = {
     "4chanGif"  : "http://s.4cdn.org/image/title/" + imageIdPlaceholder + ".gif",
@@ -59,10 +60,8 @@ function createImageViews() {
         "onclick        =  \""   + "return click_on_img(" + i + ")"      + "\">" +
         "<img " +
         "src            ='' " +
-        "width          = '120' " +
-        "height         = '120'  " +
         "id             = 'img" +  i + "' " +
-        "class          = 'img preview' " +
+        "class          = 'img_preview' " +
         "onload         = \"" + "inc_prbar();" + "\" " +
         "onerror        = \"" + "inc_prbar();" + "\" " +
         "/></a></span>";
@@ -87,7 +86,7 @@ function createImageViews() {
     //     img.width = '120';
     //     img.height = '120';
     //     img.id = 'img' + i;
-    //     img.class='img preview';
+    //     img.class='img_preview';
     //     img.onLoad = function(){inc_prbar();};
     //     img.onError = function(){inc_prbar();};
     //
@@ -127,8 +126,8 @@ function validateInputs() {
     if (currentImageIdInput.value < 0) {
         currentImageIdInput.value = 0
     }
-    if (picOnPageInput.value < 2) {
-        picOnPageInput.value = 2
+    if (picOnPageInput.value < 1) {
+        picOnPageInput.value = 1
     }
 }
 
@@ -198,7 +197,7 @@ function GalleryDefaultState() {
     if (picOnPage != undefined)
         this.PicOnPage = picOnPage;
     else
-        this.PicOnPage = 40;
+        this.PicOnPage = defaultPicsOnPage;
 
     if (imageUrlMask != undefined)
         this.ImageUrlMask = imageUrlMask;
