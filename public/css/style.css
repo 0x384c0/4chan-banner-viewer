@@ -10,6 +10,13 @@ img[name=img_preview]
     height: 100px;
 }
 
+#imageUrlMaskSelector
+{
+    margin-right: 3px;
+
+    color: #ccc;
+}
+
 input[type=text]
 {
     width: 250px;
