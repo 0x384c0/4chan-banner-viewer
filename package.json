@@ -1,0 +1,47 @@
+{
+  "name": "4chan-banner-viewer",
+  "version": "1.0.0",
+  "description": "###### 4chan-banner-viewer",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "autoprefixer-stylus": "^0.11.0",
+    "browser-sync": "^2.17.5",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-cached": "^1.1.0",
+    "gulp-changed": "^1.3.2",
+    "gulp-cssbeautify": "^0.1.3",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-csso": "^2.0.0",
+    "gulp-filter": "^4.0.0",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-include": "^2.3.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-jade-inheritance": "^0.5.5",
+    "gulp-newer": "^1.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylint": "^4.0.0",
+    "gulp-stylus": "^2.5.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.10",
+    "imagemin-pngquant": "^5.0.0",
+    "run-sequence": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0x384c0/4chan-banner-viewer.git"
+  },
+  "author": "0x384c0@gmail.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/0x384c0/4chan-banner-viewer/issues"
+  },
+  "homepage": "https://github.com/0x384c0/4chan-banner-viewer#readme"
+}
