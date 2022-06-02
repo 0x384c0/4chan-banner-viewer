@@ -1,3 +1,5 @@
+Deprecated due to CORS policy
+
 # [Try It](https://fourchan-banner-viewer.firebaseapp.com/)
 
 ###### How it looks
